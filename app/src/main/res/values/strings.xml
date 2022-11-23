@@ -3,4 +3,12 @@
     <string name="wicked">What a wicked world!</string>
     <string name="hello">Hello World</string>
     <string name="surprise">Surprise</string>
+    <string name="text_input_hint">Your typed text will be rendered bellow the button</string>
+    <string name="first_number">type your first number</string>
+    <string name="second_number">type your second number</string>
+    <string name="sum">sum</string>
+    <string name="sub">sub</string>
+    <string name="multiply">multiply</string>
+    <string name="division">division</string>
+    string.
 </resources>

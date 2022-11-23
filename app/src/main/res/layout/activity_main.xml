@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/teal_700"
     app:layout_editor_absoluteX="50dp"
-    app:layout_editor_absoluteY="50px"
+    app:layout_editor_absoluteY="50dp"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="642dp"
+        android:layout_width="315dp"
+        android:layout_height="417dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52"
         app:layout_editor_absoluteX="50dp"
-        app:layout_editor_absoluteY="50dp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="87dp">
+        app:layout_editor_absoluteY="50dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,12 +34,28 @@
             android:text="@string/wicked"
             android:textColor="@color/white" />
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_view_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_input_hint"
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/surprise_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/surprise"
             android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/text_view_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
