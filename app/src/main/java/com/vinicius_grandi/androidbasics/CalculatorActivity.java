@@ -2,7 +2,11 @@ package com.vinicius_grandi.androidbasics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,10 +31,13 @@ public class CalculatorActivity extends AppCompatActivity {
         TextView result = (TextView) findViewById(R.id.result);
 
         // listeners
-        sum.setOnClickListener(view -> result.setText(
-                String.valueOf(Double.parseDouble(firstNum.getText().toString())
-                + Double.parseDouble(secondNum.getText().toString()))
-        ));
+        sum.setOnClickListener(view -> {
+            result.setText(
+                    String.valueOf(Double.parseDouble(firstNum.getText().toString())
+                            + Double.parseDouble(secondNum.getText().toString()))
+            );
+            hideKeyboard();
+        });
         sub.setOnClickListener(view -> result.setText(
                 String.valueOf(Double.parseDouble(firstNum.getText().toString())
                         - Double.parseDouble(secondNum.getText().toString()))
@@ -43,5 +50,16 @@ public class CalculatorActivity extends AppCompatActivity {
                 String.valueOf(Double.parseDouble(firstNum.getText().toString())
                         / Double.parseDouble(secondNum.getText().toString()))
         ));
+    }
+
+    public void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(
+                    Context.INPUT_METHOD_SERVICE
+            );
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            view.clearFocus();
+        }
     }
 }

@@ -19,7 +19,11 @@ public class MainActivity extends AppCompatActivity {
         TextView textOutput = (TextView) findViewById(R.id.text_view_output);
 
         TextInputEditText textInput = (TextInputEditText) findViewById(R.id.text_view_input);
+
+        // create a new intent that shows up a new activity
         Intent myIntent = new Intent(this, CalculatorActivity.class);
+
+        // this flag will terminate previous activities when the new one opens
         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         Button surpriseBtn = (Button) findViewById(R.id.surprise_btn);
