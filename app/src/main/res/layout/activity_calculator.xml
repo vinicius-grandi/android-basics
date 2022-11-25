@@ -34,10 +34,16 @@
             android:hint="@string/second_number"
             android:inputType="number" />
 
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="33dp" />
+
         <Button
             android:id="@+id/sum"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
+            android:onClick="sum"
             android:text="@string/sum" />
 
         <Button
@@ -58,9 +64,5 @@
             android:layout_height="wrap_content"
             android:text="@string/multiply" />
 
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="match_parent"
-            android:layout_height="33dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
