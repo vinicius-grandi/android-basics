@@ -50,18 +50,21 @@
             android:id="@+id/sub"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
+            android:onClick="calculate"
             android:text="@string/sub" />
 
         <Button
             android:id="@+id/div"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
+            android:onClick="calculate"
             android:text="@string/division" />
 
         <Button
             android:id="@+id/multiply"
             android:layout_width="158dp"
             android:layout_height="wrap_content"
+            android:onClick="calculate"
             android:text="@string/multiply" />
 
     </LinearLayout>

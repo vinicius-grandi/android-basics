@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+interface ResultSetter {
+    void set(Double n);
+}
+
 public class CalculatorActivity extends AppCompatActivity {
     EditText firstNum;
     EditText secondNum;
@@ -62,6 +66,33 @@ public class CalculatorActivity extends AppCompatActivity {
             );
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             view.clearFocus();
+        }
+    }
+
+    public String getStringFromEditText(EditText et) {
+        return et.getText().toString();
+    }
+
+    public void calculate(View v) throws Exception {
+        Double a = Double.parseDouble(getStringFromEditText(firstNum));
+        Double b = Double.parseDouble(getStringFromEditText(secondNum));
+        ResultSetter res = num -> result.setText(String.valueOf(num));
+
+        switch (v.getId()) {
+            case (R.id.sum):
+                res.set(a + b);
+                break;
+            case (R.id.sub):
+                res.set(a - b);
+                break;
+            case (R.id.multiply):
+                res.set(a * b);
+                break;
+            case (R.id.div):
+                res.set(a / b);
+                break;
+            default:
+                throw new Exception("lmao");
         }
     }
 }
