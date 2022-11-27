@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText textInput = (TextInputEditText) findViewById(R.id.text_view_input);
 
         // create a new intent that shows up a new activity
-        Intent myIntent = new Intent(this, CalculatorActivity.class);
+        Intent myIntent = new Intent(this, GroceryListActivity.class);
 
         // this flag will terminate previous activities when the new one opens
         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

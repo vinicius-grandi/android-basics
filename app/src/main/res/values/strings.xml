@@ -10,5 +10,14 @@
     <string name="sub">sub</string>
     <string name="multiply">multiply</string>
     <string name="division">division</string>
+    <string name="grocery_list_text">tick your item and type the amount of it</string>
+    <string name="zero">0</string>
+    <string name="cup">Cup</string>
+    <string name="knife">Knife</string>
+    <string name="fork">Fork</string>
+    <string name="plate">Plate</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result: $</string>
+    <string name="current_item_price">%1$s $%2$d</string>
     string.
 </resources>
