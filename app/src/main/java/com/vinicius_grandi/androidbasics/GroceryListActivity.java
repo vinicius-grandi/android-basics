@@ -3,14 +3,19 @@ package com.vinicius_grandi.androidbasics;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GroceryListActivity extends AppCompatActivity {
     Resources res;
@@ -47,9 +52,17 @@ public class GroceryListActivity extends AppCompatActivity {
             @SuppressLint("DefaultLocale")
             String text = String.format("Result: $%d", totalPrice);
             result.setText(text);
+
+            // Toast toast = Toast.makeText(this, "Your total price was calculated!", Toast.LENGTH_LONG);
+            // toast.show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Your total price was calculated!");
+            builder.setNeutralButton("Clear Result", (dialogInterface, i) -> {
+                result.setText("");
+            });
+            builder.show();
         });
     }
-
     private void toggleEnabled(CheckBox checkbox, EditText amount) {
         checkbox.setOnClickListener(view -> {
             if (!checkbox.isChecked()) {
@@ -107,5 +120,10 @@ public class GroceryListActivity extends AppCompatActivity {
 
             }
         });
+    }
+    public void openAbout(View v) {
+        Intent aboutIntent = new Intent(this, About.class);
+        aboutIntent.putExtra("new_text", "hello, I'm a text");
+        startActivity(aboutIntent);
     }
 }
